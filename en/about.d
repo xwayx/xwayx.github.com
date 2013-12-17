@@ -1,6 +1,0 @@
-<div class="about">
-　　I try to create an English version of this website to improve my english skills....
-
-　　Nothing more....
-
-<span style="float:right;">2012.11</span></div>

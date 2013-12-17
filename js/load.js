@@ -1,1 +1,0 @@
-_run = 'info();';GetHttp(dir+'info.d');$('footer').innerHTML=$('footer').innerHTML.replace('ed.','ed.<a href="http://www.cnzz.com/stat/website.php?web_id=3220466" title="'+tc+'" target="_blank">　</a>');
