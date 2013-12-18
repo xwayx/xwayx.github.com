@@ -2,33 +2,105 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Images</title>
-<meta name="keywords" content="blog,linux,ubuntu,mac,windows,php,asp,javascript,html" />
-<meta name="description" content="just a bolg" />
+<title>GaiBa搏击gif集锦</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
 <meta name="author" content="Robin" />
 <meta name="copyright" content="xwayx.com" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <script type="text/javascript">
-	//run on OpenShift
 	if(top.location != self.location) {top.location=self.location;}
+function $(e) {
+    return document.getElementById(e);
+}
+function nativeSort(arr){return arr.sort(function(a,b){return Math.random()>0.5?(-1):1});}
+var imgs='ww1.sinaimg.cn/mw690/88e55566gw1eax6l52buhg207s057kiw.gif';
+imgs += '|ww1.sinaimg.cn/mw690/88e55566gw1eax50aep8fg2064069tya.gif';
+imgs += '|ww2.sinaimg.cn/mw690/88e55566gw1eax50vysgfg205008cqub.gif';
+imgs += '|ww4.sinaimg.cn/mw690/88e55566gw1eax51e6xjrg206y06ykio.gif';
+imgs += '|ww4.sinaimg.cn/mw690/88e55566gw1eax55a7e0jg207i0507vq.gif';
+imgs += '|ww4.sinaimg.cn/mw690/88e55566gw1eax4ze1pw7g206e052kir.gif';
+imgs += '|ww4.sinaimg.cn/mw690/88e55566gw1eax54arpdsg205k04tnoo.gif';
+imgs += '|ww4.sinaimg.cn/mw690/88e55566gw1eax54tugm1g206m05x7vj.gif';
+imgs += '|ww1.sinaimg.cn/mw690/88e55566gw1eax53uc1r8g208c050hd2.gif';
+imgs += '|ww3.sinaimg.cn/mw690/88e55566gw1eax526y3s6g208w05g7vs.gif';
+imgs += '|ww1.sinaimg.cn/mw690/88e55566gw1eax6p8ocz7g206y049u08.gif';
+imgs += '|ww3.sinaimg.cn/mw690/88e55566gw1ebmmdy7k50g206404n1k8.gif';
+imgs += '|ww3.sinaimg.cn/mw690/88e55566gw1ebmmeukcvpg2082077x54.gif';
+//imgs += '|';
+
+imgs = imgs.split('|');
+imgs = nativeSort(imgs);
+imgs = nativeSort(imgs);
+var imgNo = 0;
+
+
 </script>
+<style>
+body{
+	text-align: center;
+	padding: 0;margin: 0;
+	background: #eee;
+}
+#showimg{
+	width: 90%;
+	padding: 5px;
+	margin: 100px auto auto auto;
+}
+#showimg img{
+	padding: 3px;
+	border:1px solid #BFBFBF;
+}
+#previous,#next{
+	width: 108px;
+	height:  58px;
+	padding: 0;
+	margin: 0;
+}
+#previous img{
+	margin: 0 38px 30px 0;
+}
+#next img{
+	margin: 0 0 30px 38px;
+}
+#previous img, #next img{
+	border: 0;
+	padding: 0;
+}
+#showNo{
+	text-align: center;
+	font: 28px arial,tahoma,verdana,sans-serif;;
+	width: 50%;
+	margin: 20px auto auto auto;
+}
+</style>
 </head>
 <body>
-
-	<img src="http://ww1.sinaimg.cn/mw690/88e55566gw1eax6l52buhg207s057kiw.gif" />
-	<img src="http://ww1.sinaimg.cn/mw690/88e55566gw1eax50aep8fg2064069tya.gif" />
-	<img src="http://ww2.sinaimg.cn/mw690/88e55566gw1eax50vysgfg205008cqub.gif" />
-	<img src="http://ww4.sinaimg.cn/mw690/88e55566gw1eax51e6xjrg206y06ykio.gif" />
-	<img src="http://ww4.sinaimg.cn/mw690/88e55566gw1eax55a7e0jg207i0507vq.gif" />
-	<img src="http://ww4.sinaimg.cn/mw690/88e55566gw1eax4ze1pw7g206e052kir.gif" />
-	<img src="http://ww4.sinaimg.cn/mw690/88e55566gw1eax54arpdsg205k04tnoo.gif" />
-	<img src="http://ww4.sinaimg.cn/mw690/88e55566gw1eax54tugm1g206m05x7vj.gif" />
-	<img src="http://ww1.sinaimg.cn/mw690/88e55566gw1eax53uc1r8g208c050hd2.gif" />
-	<img src="http://ww3.sinaimg.cn/mw690/88e55566gw1eax526y3s6g208w05g7vs.gif" />
-	<img src="http://ww1.sinaimg.cn/mw690/88e55566gw1eax6p8ocz7g206y049u08.gif" />
-	<img src="http://ww3.sinaimg.cn/mw690/88e55566gw1ebmmdy7k50g206404n1k8.gif" />
-	<img src="http://ww3.sinaimg.cn/mw690/88e55566gw1ebmmeukcvpg2082077x54.gif" />
-	<img src="" />
-	<img src="" />
+	<div id='showimg'></div>
+	<div id='showNo'></div>
 </body>
+<script type="text/javascript">
+function upNo() {
+$('showNo').innerHTML = (imgNo+1)+'/'+imgs.length;}
+
+var th1='<a href="javascript:prev();" id="previous"><img title="上一张" onmouseover="this.src=\'pup.png\';" onmouseout="this.src=\'previous.png\';" src="previous.png" /></a>';
+var th2='<a href="javascript:next();" id="next"><img title="下一张" onmouseover="this.src=\'nup.png\';" onmouseout="this.src=\'next.png\';" src="next.png" /></a>';
+function prev() {
+	imgNo -= 1;
+	if (imgNo == 0) {
+		$('showimg').innerHTML = '<span id="previous"><img src="pnone.png" /></span><img src="http://'+imgs[imgNo]+'" />' + th2;upNo();
+		return;
+	};
+	$('showimg').innerHTML = th1 + '<img src="http://'+imgs[imgNo]+'" />' + th2;upNo();
+}
+function next() {
+	imgNo += 1;
+	if (imgNo == (imgs.length-1)) {
+		$('showimg').innerHTML = th1 + '<img src="http://'+imgs[imgNo]+'" /><span id="next"><img src="nnone.png" /></span>';upNo();
+		return;
+	};
+	$('showimg').innerHTML = th1 + '<img src="http://'+imgs[imgNo]+'" />' + th2;upNo();
+}
+$('showimg').innerHTML = '<span id="previous"><img src="pnone.png" /></span><img src="http://'+imgs[0]+'" />' + th2;upNo();
+</script>
 </html>
