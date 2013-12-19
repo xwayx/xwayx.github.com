@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>GaiBa搏击gif集锦</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0"/>
+<title>街霸搏击gif集锦</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <meta name="author" content="Robin" />
@@ -43,13 +44,15 @@ body{
 	background: #eee;
 }
 #showimg{
-	width: 90%;
-	padding: 5px;
-	margin: 100px auto auto auto;
+	width: 100%;
+	padding: 0;
+	margin: 0;
 }
 #showimg img{
-	padding: 3px;
+	padding: 3px;margin-top: 5px;
 	border:1px solid #BFBFBF;
+	max-width: 96%;
+	max-height: 70%;
 }
 #previous,#next{
 	width: 108px;
@@ -58,10 +61,10 @@ body{
 	margin: 0;
 }
 #previous img{
-	margin: 0 38px 30px 0;
+	margin: 20px 25px 5px 0;
 }
 #next img{
-	margin: 0 0 30px 38px;
+	margin: 20px 0 5px 25px;
 }
 #previous img, #next img{
 	border: 0;
@@ -70,8 +73,8 @@ body{
 #showNo{
 	text-align: center;
 	font: 28px arial,tahoma,verdana,sans-serif;;
-	width: 50%;
-	margin: 20px auto auto auto;
+	width: 80%;
+	margin: 30px auto auto auto;
 }
 #cantsee{height: 1px;padding: 0;font-size: 0px;text-align: left;}
 #cantsee img{height: 1px;width: 1px;margin: 0;padding: 0;}
@@ -79,15 +82,15 @@ body{
 </head>
 <body>
 	<div id='cantsee'>
-		<img src="previous.png" />
-		<img src="pup.png" />
 		<img src="pnone.png" />
 		<img src="next.png" />
+		<img src="previous.png" />
+		<img src="pup.png" />
 		<img src="nup.png" />
 		<img src="nnone.png" />
 	</div>
-	<div id='showimg'></div>
 	<div id='showNo'></div>
+	<div id='showimg'></div>
 </body>
 <script type="text/javascript">
 function upNo() {
@@ -98,19 +101,19 @@ var th2='<a href="javascript:next();" id="next"><img title="下一张" onmouseov
 function prev() {
 	imgNo -= 1;
 	if (imgNo == 0) {
-		$('showimg').innerHTML = '<span id="previous"><img src="pnone.png" /></span><img src="http://'+imgs[imgNo]+'" />' + th2;upNo();
+		$('showimg').innerHTML = '<img src="http://'+imgs[imgNo]+'" /><br /><span id="previous"><img src="pnone.png" /></span>' + th2;upNo();
 		return;
 	};
-	$('showimg').innerHTML = th1 + '<img src="http://'+imgs[imgNo]+'" />' + th2;upNo();
+	$('showimg').innerHTML = '<img src="http://'+imgs[imgNo]+'" /><br />' + th1 + th2;upNo();
 }
 function next() {
 	imgNo += 1;
 	if (imgNo == (imgs.length-1)) {
-		$('showimg').innerHTML = th1 + '<img src="http://'+imgs[imgNo]+'" /><span id="next"><img src="nnone.png" /></span>';upNo();
+		$('showimg').innerHTML = '<img src="http://'+imgs[imgNo]+'" /><br />' + th1 +'<span id="next"><img src="nnone.png" /></span>';upNo();
 		return;
 	};
-	$('showimg').innerHTML = th1 + '<img src="http://'+imgs[imgNo]+'" />' + th2;upNo();
+	$('showimg').innerHTML = '<img src="http://'+imgs[imgNo]+'" /><br />' + th1 + th2;upNo();
 }
-$('showimg').innerHTML = '<span id="previous"><img src="pnone.png" /></span><img src="http://'+imgs[0]+'" />' + th2;upNo();
+$('showimg').innerHTML = '<img src="http://'+imgs[0]+'" /><span id="previous"><br /><img src="pnone.png" /></span>' + th2;upNo();
 </script>
 </html>
